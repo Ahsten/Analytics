@@ -1,3 +1,37 @@
 .shots{
     fill: black;
 }
+
+.rink{
+    stroke-width: 2/12;
+    fill: none;
+    stroke: black;
+}
+
+.redline{
+    fill: red;
+}
+
+.blueline{
+    fill: blue;
+}
+
+.goalline{
+    fill: red;
+}
+
+.faceoff-dot{
+    fill: red;
+}
+
+.faceoff-circle{
+    fill: none;
+    stroke: red;
+    stroke-width: 2;
+}
+
+.goalcrease{
+    fill: lightblue;
+    stroke-width: 2/12;
+    stroke: red;
+}

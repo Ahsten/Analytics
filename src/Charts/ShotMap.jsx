@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import Chart from "./Chart";
 import * as d3 from "d3";
 import Circles from "./Circles"
+import Rink from "./Rink";
 
 const chartSettigns = {
     width: 1000,
@@ -31,11 +32,10 @@ export default function ShotMap({data, xAccessor, yAccessor}){
     const yAccessorScaled = d => yScale(yAccessor(d));
     const keyAccessor = (d, i) => i;
 
-
-
     return(
         <div className="shotmap">
             <Chart dimensions={dimensions}>
+                <Rink />
                 <Circles 
                     data={data}
                     keyAccessor={keyAccessor}
