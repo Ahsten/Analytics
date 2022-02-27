@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default function Shots({data, xAccessor, yAccessor, radius}){
+export default function Shots({data, xAccessor, yAccessor}){
     return(
     <React.Fragment>
         {data.map((d) => (

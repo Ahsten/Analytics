@@ -9,6 +9,7 @@ function App() {
   const xAccessor = d => d.coordinates.x;
   const yAccessor = d => d.coordinates.y;
 
+
   function Shot(description, shot, team, player, coordinates){
       this.description = description;
       this.shotType = shot;
@@ -31,8 +32,14 @@ function App() {
 
   function getShotData(array, shots){
       array.forEach((sData) => {
-          const shot = new Shot(sData.result.description, sData.result.secondaryType, sData.team.name, sData.players[0].player.fullName, sData.coordinates);
+        if(sData.team.name === "Minnesota Wild"){
+          let shot = new Shot(sData.result.description, sData.result.secondaryType, sData.team.name, sData.players[0].player.fullName, sData.coordinates);
+          if(shot.coordinates.x > 0){
+            shot.coordinates.x = shot.coordinates.x * -1;
+            shot.coordinates.y = shot.coordinates.y * -1;
+          }
           shots.push(shot);
+        }
       });
 
       setDataset(shots);

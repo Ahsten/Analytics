@@ -70,20 +70,6 @@ function creaseFunction(input){
   
 var yDistance = RINK_CONFIG.BOARDS_RADIUS - Math.sqrt((2 * RINK_CONFIG.RED_TO_BOARDS * RINK_CONFIG.BOARDS_RADIUS) - (RINK_CONFIG.RED_TO_BOARDS * RINK_CONFIG.RED_TO_BOARDS));
 
-  /** 
-  var xScale = d3.scaleLinear().domain([-100, 0]).range([0, 470.59]);
-  var yScale = d3.scaleLinear().domain([42.5, -42.5]).range([0, 400]);
-  
-    // Add the x Axis
-  wrapper.append("g")
-    .attr("transform", "translate(" + 0 + "," + yScale(0) + ")")
-    .call(d3.axisBottom(xScale));
-  
-  // Add the y Axis
-  wrapper.append("g")
-    .attr("transform", "translate(" + xScale(0) + "," + 0 + ")")
-    .call(d3.axisLeft(yScale)); 
-*/
 
 export default function Rink(){
     return(

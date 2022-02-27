@@ -4,7 +4,7 @@ import * as d3 from "d3";
 import Circles from "./Circles"
 import Rink from "./Rink";
 
-const chartSettigns = {
+const chartSettings = {
     width: 1000,
     height: 1000,
     marginTop: 100,
@@ -16,16 +16,16 @@ const chartSettigns = {
 }
 
 export default function ShotMap({data, xAccessor, yAccessor}){
-    const [dimensions, setDimensions] = useState(chartSettigns);
+    const [dimensions, setDimensions] = useState(chartSettings);
 
     const xScale = d3.scaleLinear()
-        .domain(d3.extent(data, xAccessor))
-        .range([0, dimensions.boundedWidth])
+        .domain([-100, 0])
+        .range([0, 470.59])
         .nice();
 
     const yScale = d3.scaleLinear()
-        .domain(d3.extent(data, yAccessor))
-        .range([dimensions.boundedHeight, 0])
+        .domain([42.5, -42.5])
+        .range([0, 400])
         .nice();    
 
     const xAccessorScaled = d => xScale(xAccessor(d));
