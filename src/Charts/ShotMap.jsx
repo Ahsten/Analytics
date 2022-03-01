@@ -5,8 +5,8 @@ import Circles from "./Circles"
 import Rink from "./Rink";
 
 const chartSettings = {
-    width: 1000,
-    height: 1000,
+    width: 700,
+    height: 500,
     marginTop: 100,
     marginRight: 100,
     marginBottom: 100,
@@ -15,7 +15,7 @@ const chartSettings = {
     boundedWidth: 800,
 }
 
-export default function ShotMap({data, xAccessor, yAccessor}){
+export default function ShotMap({data, xAccessor, yAccessor, team}){
     const [dimensions, setDimensions] = useState(chartSettings);
 
     const xScale = d3.scaleLinear()
@@ -40,7 +40,8 @@ export default function ShotMap({data, xAccessor, yAccessor}){
                     data={data}
                     keyAccessor={keyAccessor}
                     xAccessor={xAccessorScaled}
-                    yAccessor={yAccessorScaled}/>
+                    yAccessor={yAccessorScaled}
+                    team={team}/>
             </Chart>
         </div>
     );
